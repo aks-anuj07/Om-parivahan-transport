@@ -1,0 +1,69 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { AnimatedHeading } from "./animated-heading"
+import { siteConfig } from "@/lib/config"
+
+export function HeroSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex === siteConfig.hero.images.length - 1 ? 0 : prevIndex + 1))
+    }, siteConfig.hero.slideInterval)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <section className="relative h-screen overflow-hidden">
+      <div className="absolute top-6 left-6 z-20">
+        <Image
+          src="/images/logo.jpg"
+          alt={`${siteConfig.company.name} Logo`}
+          width={120}
+          height={120}
+          className="rounded-full bg-white p-2 shadow-lg"
+        />
+      </div>
+
+      <div className="relative h-full">
+        {siteConfig.hero.images.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
+              index === currentImageIndex
+                ? "translate-x-0"
+                : index < currentImageIndex
+                  ? "-translate-x-full"
+                  : "translate-x-full"
+            }`}
+          >
+            <Image
+              src={image || "/placeholder.svg"}
+              alt={`Transport Service ${index + 1}`}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+        <div className="text-center text-white px-4 max-w-4xl">
+          <AnimatedHeading as="h1" className="text-4xl md:text-6xl font-bold mb-6">
+            {siteConfig.company.name}
+          </AnimatedHeading>
+          <p className="text-xl md:text-2xl mb-8 font-light">{siteConfig.company.tagline}</p>
+          <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">{siteConfig.company.description}</p>
+          <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 text-lg">
+            Get Quote Now
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
