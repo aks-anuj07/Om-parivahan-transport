@@ -9,9 +9,9 @@ export const siteConfig = {
   },
   contact: {
     phone: "+918168093076",
-    phoneDisplay: "+91 81680 93076",
-    email: "info@omparivahan.com",
-    whatsapp: "918168093076",
+    phoneDisplay: "+91 9053000839",
+    email: "omparivahanservices90@gmail.com",
+    whatsapp: "919053000839",
     address: "30KM, Tumkur Road, NH-4, OPP TCL m.n.Halli, Bangalore-562123",
   },
   hero: {
