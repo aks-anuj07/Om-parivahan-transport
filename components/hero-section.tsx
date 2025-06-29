@@ -21,7 +21,7 @@ export function HeroSection() {
     <section className="relative h-screen overflow-hidden">
       <div className="absolute top-6 left-6 z-20">
         <Image
-          src="/images/logo.jpg"
+          src="/logo.svg"
           alt={`${siteConfig.company.name} Logo`}
           width={120}
           height={120}

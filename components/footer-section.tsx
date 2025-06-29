@@ -10,7 +10,7 @@ export function FooterSection() {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-4 mb-6">
               <Image
-                src="/images/logo.jpg"
+                src="/logo.svg"
                 alt={`${siteConfig.company.name} Logo`}
                 width={60}
                 height={60}
