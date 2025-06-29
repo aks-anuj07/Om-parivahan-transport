@@ -31,7 +31,7 @@ export function FooterSection() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            {/* <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-300">
               {siteConfig.navigation.map((item, index) => (
                 <li key={index}>
@@ -40,7 +40,7 @@ export function FooterSection() {
                   </a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
 
           <div>
