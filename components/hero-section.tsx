@@ -16,7 +16,8 @@ export function HeroSection() {
 
     return () => clearInterval(interval)
   }, [])
-  const whatsappHref = `https://wa.me/${siteConfig.contact.whatsapp}`; 
+
+  const whatsappHref = `https://wa.me/${siteConfig.contact.whatsapp}`
 
   return (
     <section className="relative h-screen overflow-hidden">
@@ -34,20 +35,27 @@ export function HeroSection() {
         {siteConfig.hero.images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${
-              index === currentImageIndex
+            className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${index === currentImageIndex
                 ? "translate-x-0"
                 : index < currentImageIndex
                   ? "-translate-x-full"
                   : "translate-x-full"
-            }`}
+              }`}
           >
             <Image
               src={image || "/placeholder.svg"}
               alt={`Transport Service ${index + 1}`}
               fill
-              className="object-cover"
+              // CHANGED: Modified object-fit and positioning for better responsive display
+              // className=" w-full object-cover object-center sm:object-cover md:object-cover lg:object-cover"
+              className="w-full md:object-cover"
+              // CHANGED: Added responsive object positioning for better mobile display
+              style={{
+                objectPosition: "center center",
+              }}
               priority={index === 0}
+              // CHANGED: Added sizes prop for better responsive image loading
+              sizes="100vw"
             />
           </div>
         ))}
@@ -61,13 +69,8 @@ export function HeroSection() {
           <p className="text-xl md:text-2xl mb-8 font-light">{siteConfig.company.tagline}</p>
           <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">{siteConfig.company.description}</p>
           <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 text-lg">
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contact via WhatsApp"
-            >
-            Get Quote Now
+            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
+              Get Quote Now
             </a>
           </Button>
         </div>
