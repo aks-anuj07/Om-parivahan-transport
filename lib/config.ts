@@ -8,7 +8,7 @@ export const siteConfig = {
       "At OM PARIVAHAN SERVICES, we believe that every shipment tells a story—and we're here to make yours unforgettable. Whether you're moving time-sensitive parcels across the city or coordinating large-scale freight across the country, our precision-driven fleet keeps your business moving forward.",
   },
   contact: {
-    phone: "+918168093076",
+    phone: "+919053000839",
     phoneDisplay: "+91 9053000839",
     email: "omparivahanservices90@gmail.com",
     whatsapp: "919053000839",
