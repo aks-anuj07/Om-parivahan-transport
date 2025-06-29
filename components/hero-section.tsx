@@ -16,6 +16,7 @@ export function HeroSection() {
 
     return () => clearInterval(interval)
   }, [])
+  const whatsappHref = `https://wa.me/${siteConfig.contact.whatsapp}`; 
 
   return (
     <section className="relative h-screen overflow-hidden">
@@ -60,7 +61,14 @@ export function HeroSection() {
           <p className="text-xl md:text-2xl mb-8 font-light">{siteConfig.company.tagline}</p>
           <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">{siteConfig.company.description}</p>
           <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 text-lg">
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact via WhatsApp"
+            >
             Get Quote Now
+            </a>
           </Button>
         </div>
       </div>

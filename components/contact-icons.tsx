@@ -4,8 +4,8 @@ import { MessageCircle, PhoneCall } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
 export function ContactIcons() {
-  const whatsappHref = `https://wa.me/${siteConfig.contact.whatsapp}`; // e.g. "918168093076"
-  const phoneHref = `tel:${siteConfig.contact.phone}`;                  // e.g. "+918168093076"
+  const whatsappHref = `https://wa.me/${siteConfig.contact.whatsapp}`; 
+  const phoneHref = `tel:${siteConfig.contact.phone}`;                  
 
   return (
     <div className="fixed bottom-6 right-6 flex flex-col space-y-3 z-50">
